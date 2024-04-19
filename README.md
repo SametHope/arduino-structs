@@ -1,6 +1,6 @@
 # Arduino Structs
 
-This is a small arduino "library" made of data structures for common IO components with common functionality for myself that I find extremely helpful.
+This is a small arduino "library" made of data structures for common IO components with common functionality for myself that I find pretty helpful.
 
 See [SametHopeStructs.h](https://github.com/SametHope/arduino-structs/blob/main/SametHopeStructs.h) for conventions used and a list of data structures included and more.
 
