@@ -18,8 +18,8 @@
 // - SH_X.update(newValue) may have custom behaviours at certain values, those are likely commented
 // - Some data structures may have extra parameters on declarations which are also likely commented
 
+#include "SH_Buzzer.h"
 #include "SH_Potentiometer.h"
 #include "SH_SingleColoredLed.h"
 #include "SH_Switch.h"
 #include "SH_UltrasonicSensor.h"
-#include "SH_Buzzer.h"

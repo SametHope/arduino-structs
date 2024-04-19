@@ -4,7 +4,7 @@ struct SH_SingleColoredLED {
   bool value;
 
   SH_SingleColoredLED(uint8_t pin)
-    : pin(pin), value(false) {
+      : pin(pin), value(false) {
     pinMode(pin, OUTPUT);
   }
 

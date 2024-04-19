@@ -4,7 +4,7 @@ struct SH_Switch {
   bool value;
 
   SH_Switch(uint8_t pin)
-    : pin(pin), value(false) {
+      : pin(pin), value(false) {
     pinMode(pin, INPUT_PULLUP);
   }
 
