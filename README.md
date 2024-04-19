@@ -9,3 +9,8 @@ See [SametHopeStructs.h](https://github.com/SametHope/arduino-structs/blob/main/
 1. Add all files on the repo into the relevant arduino project.
 2. Include SametHopeStructs.h for all structs or include them individually.
 
+### Misc
+Clang_format_fallback Style configuration used on Visual Studio Code for formatting: 
+```
+{ BasedOnStyle: LLVM, UseTab: Never, IndentWidth: 2, TabWidth: 2, BreakBeforeBraces: Attach, AllowShortIfStatementsOnASingleLine: false, IndentCaseLabels: false, ColumnLimit: 0, AccessModifierOffset: -2 }
+```
