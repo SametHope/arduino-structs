@@ -1,3 +1,5 @@
+#include "SH_Utility.h"
+
 // INPUT COMPONENT
 struct SH_Potentiometer {
   uint8_t pin;
@@ -13,6 +15,6 @@ struct SH_Potentiometer {
 
   void update() {
     value = analogRead(pin);
-    value = map(value, 0, 1023, minValue, maxValue + 1);
+    value = mapInclusive(value, 0, 1023, minValue, maxValue);
   }
 };
