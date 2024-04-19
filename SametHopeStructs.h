@@ -17,8 +17,10 @@
 // Exceptions:
 // - SH_X.update(newValue) may have custom behaviours at certain values, those are likely commented
 // - Some data structures may have extra parameters on declarations which are also likely commented
+// - Some data structures such as joystick may store their value on different variables as they have multiple
 
 #include "SH_Buzzer.h"
+#include "SH_Joystick.h"
 #include "SH_Potentiometer.h"
 #include "SH_SingleColoredLed.h"
 #include "SH_Switch.h"
