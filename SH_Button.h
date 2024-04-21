@@ -1,4 +1,6 @@
-// INPUT COMPONENT
+// Digital Input Component
+// - `read()` updates and returns click state.
+// - Works identical to `SH_Switch`.
 struct SH_Button {
   uint8_t pin;
   bool value;
@@ -8,7 +10,8 @@ struct SH_Button {
     pinMode(pin, INPUT_PULLUP);
   }
 
-  void update() {
+  bool read() {
     value = !digitalRead(pin);
+    return value;
   }
 };
