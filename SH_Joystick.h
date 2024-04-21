@@ -1,11 +1,11 @@
 #include "SH_Utility.h"
 
 // Analog and Digital Input Component
-// Takes in min and max values for x and y on constructor to map their the input range of 0...1023 to.
+// Takes in min and max values for x and y on constructor to map their the input range of 0...1023 to, inclusively.
 // - `read()`: Updates x, y, and click values.
-// - `readX()`: Reads and returns x-axis value.
-// - `readY()`: Reads and returns y-axis value.
-// - `readClick()`: Reads and returns click state.
+// - `readX()`: Updates and returns x-axis value.
+// - `readY()`: Updates and returns y-axis value.
+// - `readClick()`: Updates and returns click state.
 struct SH_Joystick {
   uint8_t xPin;
   uint8_t yPin;
@@ -21,7 +21,6 @@ struct SH_Joystick {
   int yMinValue;
   int yMaxValue;
 
-  // Map both x and y axis 0...1023 values to provided mins and max inclusively
   SH_Joystick(uint8_t xPin, uint8_t yPin, uint8_t clickPin, int xMin, int xMax, int yMin, int yMax)
       : xPin(xPin), yPin(yPin), clickPin(clickPin), xValue(0), yValue(0), clickValue(false), xMinValue(xMin), xMaxValue(xMax), yMinValue(yMin), yMaxValue(yMax) {
     pinMode(xPin, INPUT);
