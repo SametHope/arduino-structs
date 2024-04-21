@@ -19,6 +19,7 @@
 // - Some data structures may have extra parameters on declarations which are also likely commented
 // - Some data structures such as joystick may store their value on different variables as they have multiple
 
+#include "SH_Button.h"
 #include "SH_Buzzer.h"
 #include "SH_Joystick.h"
 #include "SH_Potentiometer.h"
