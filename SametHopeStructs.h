@@ -19,6 +19,7 @@
 #include "SH_Button.h"
 #include "SH_Buzzer.h"
 #include "SH_Joystick.h"
+#include "SH_MultiColoredLED.h"
 #include "SH_Potentiometer.h"
 #include "SH_SingleColoredLed.h"
 #include "SH_Switch.h"
