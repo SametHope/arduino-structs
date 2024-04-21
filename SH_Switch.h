@@ -9,6 +9,6 @@ struct SH_Switch {
   }
 
   void update() {
-    value = digitalRead(pin);
+    value = !digitalRead(pin);
   }
 };
