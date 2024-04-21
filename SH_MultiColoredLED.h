@@ -1,4 +1,8 @@
-// OUTPUT COMPONENT
+// Analog Output Component
+// - `write(uint8_t red, uint8_t green, uint8_t blue)`: Sets the RGB values for the LED.
+// - `writeRed(uint8_t value)`: Sets the red component of the LED.
+// - `writeGreen(uint8_t value)`: Sets the green component of the LED.
+// - `writeBlue(uint8_t value)`: Sets the blue component of the LED.
 struct SH_MultiColoredLED {
   uint8_t redPin;
   uint8_t greenPin;
@@ -15,23 +19,23 @@ struct SH_MultiColoredLED {
     pinMode(bluePin, OUTPUT);
   }
 
-  void update(uint8_t red, uint8_t green, uint8_t blue) {
-    updateRed(red);
-    updateGreen(green);
-    updateBlue(blue);
+  void write(uint8_t red, uint8_t green, uint8_t blue) {
+    writeRed(red);
+    writeGreen(green);
+    writeBlue(blue);
   }
 
-  void updateRed(uint8_t value) {
+  void writeRed(uint8_t value) {
     redValue = value;
     analogWrite(redPin, value);
   }
 
-  void updateGreen(uint8_t value) {
+  void writeGreen(uint8_t value) {
     greenValue = value;
     analogWrite(greenPin, value);
   }
 
-  void updateBlue(uint8_t value) {
+  void writeBlue(uint8_t value) {
     blueValue = value;
     analogWrite(bluePin, value);
   }
