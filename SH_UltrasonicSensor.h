@@ -1,17 +1,20 @@
-// INPUT COMPONENT
+// Analog Input Component
+// - `read()`: Updates and returns the distance value (in cm) based on the sensor readings.
+// - `readAccurate(unsigned int accuracy = 3)`: Reads multiple times, filters values, and returns the average distance (in cm). Returns 1200 on invalid values or divide by zero.
 struct SH_UltrasonicSensor {
   uint8_t trigPin;
   uint8_t echoPin;
   unsigned long duration;
-  int value; // Distance in cm
+  // Distance in cm
+  int value;
 
-  SH_UltrasonicSensor(uint8_t trig, uint8_t echo)
-      : trigPin(trig), echoPin(echo), duration(0), value(0) {
+  SH_UltrasonicSensor(uint8_t trigPin, uint8_t echoPin)
+      : trigPin(trigPin), echoPin(echoPin), duration(0), value(0) {
     pinMode(trigPin, OUTPUT);
     pinMode(echoPin, INPUT);
   }
 
-  void update() {
+  int read() {
     digitalWrite(trigPin, LOW);
     delayMicroseconds(2);
     digitalWrite(trigPin, HIGH);
@@ -20,14 +23,16 @@ struct SH_UltrasonicSensor {
     duration = pulseIn(echoPin, HIGH);
     // formula for distance in cm
     value = (duration / 2) / 29.1;
+
+    return value;
   }
 
   // Performs multiple update(), filters values > 1198 and returns the average, returns 1200 on invalid values or on divide by zero
-  void updateAccurate(unsigned int accuracy = 3) {
+  int readAccurate(unsigned int accuracy = 3) {
     int sum = 0;
     int fails = 0;
     for (int i = 0; i < accuracy; i++) {
-      update();
+      read();
       if (value > 1198)
         fails++;
       else
@@ -39,5 +44,7 @@ struct SH_UltrasonicSensor {
     } else {
       value = int(float(sum) / float(accuracy - fails));
     }
+
+    return value;
   }
 };
